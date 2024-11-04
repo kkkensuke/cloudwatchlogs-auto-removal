@@ -58,4 +58,9 @@ resource "aws_ssm_parameter" "cwlogs_app_logs" {
 
 4. Execute Rum Command from AWS Console or via AWS CLI with `AmazonCloudWatch-ManageAgent` document.
   - select ssm parameter name at `command parameter` section.
+  - <img width="844" alt="image" src="https://github.com/user-attachments/assets/7075c305-ccf6-4b50-b397-7653b8de5b3e">
+  - <img width="833" alt="image" src="https://github.com/user-attachments/assets/796d8418-77fb-4a54-abf4-3fed71fc96fe">
+
+
+
 
