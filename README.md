@@ -17,7 +17,7 @@ variable "app_logs" {
 }
 
 ```
-1. Define cloudwatch log group for each log.
+2. Define cloudwatch log group for each log.
 ```
 resource "aws_cloudwatch_log_group" "app_logs" {
   for_each = var.app_logs
@@ -31,7 +31,7 @@ resource "aws_cloudwatch_log_group" "app_logs" {
   }
 }
 ```
-1. Configure ssm parameter for CloudWatch Agent configuration file. Contents of this file is an actual configuration you set to CW Agent Config file.
+3. Configure ssm parameter for CloudWatch Agent configuration file. Contents of this file is an actual configuration you set to CW Agent Config file.
 ```
 resource "aws_ssm_parameter" "cwlogs_app_logs" {
   name = format("AmazonCloudWatchLogs-%s-%s", var.service_name, var.env)
@@ -56,6 +56,6 @@ resource "aws_ssm_parameter" "cwlogs_app_logs" {
 }
 ```
 
-1. Execute Rum Command from AWS Console or via AWS CLI with `AmazonCloudWatch-ManageAgent` document.
+4. Execute Rum Command from AWS Console or via AWS CLI with `AmazonCloudWatch-ManageAgent` document.
   - select ssm parameter name at `command parameter` section.
 
